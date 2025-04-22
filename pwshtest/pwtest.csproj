@@ -1,0 +1,47 @@
+﻿<Project
+	xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+	DefaultTargets="Build"
+	ToolsVersion="4.0"	
+>
+	<PropertyGroup>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<PlatformTarget>x64</PlatformTarget>
+        <RootNamespace>pwtest</RootNamespace>
+		<AssemblyName>pwtest</AssemblyName>
+		<OutputType>WinExe</OutputType>
+		<OutputPath>.\build</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="System" />
+		<Reference Include="System.Data" />
+		<Reference Include="System.Runtime" />
+		<Reference Include="System.Xml" />
+		<Reference Include="System.Xaml" />
+		<Reference Include="WindowsBase" />
+		<Reference Include="PresentationCore" />
+		<Reference Include="PresentationFramework" />
+    </ItemGroup>
+
+    <!-- XAML -->
+    <ItemGroup>
+        <ApplicationDefinition Include="Application.xaml" />
+		<Page Include="MainWindow.xaml" />
+    </ItemGroup>
+    <!-- cs -->
+    <ItemGroup>
+        <Compile Include="event.cs" />
+         <Compile Include="initxaml.cs" />
+         <Compile Include="methodtempMethod.cs" />
+         <Compile Include="viewmodel_base.cs" />
+         <Compile Include="viewmodel_command.cs" />
+         <Compile Include="viewmodel_property.cs" />
+     </ItemGroup>
+    <!-- Reference --><ItemGroup>
+    <Reference Include="System.Management.Automation">
+        <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e3\System.Management.Automation.dll</HintPath>
+    </Reference>
+</ItemGroup>
+
+	<Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
